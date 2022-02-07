@@ -1,0 +1,19 @@
+서버사이드-php
+aside li div는 span으로 해도됨 디브는 여백용
+nav 는 다 붙어있어서 여백안주고 바로  에이태그
+aside: 120-66(네비게이션 높이)=54 
+/* 위아레 뺴면 실제 내부높이120px 라인 헤이트 숫자 줄이면 이미지 올라감*/
+/* 서브메뉴 top은 네비게이션 바텀사이 흰 여백때문에 올림*/
+#wrap #header .container .right .bottom #nav ul li{float: left;} 왼쪽부터 순서대로 정렬
+nav는 div같은 여백없어서 inline-block x
+#wrap #header .container .right .top #aside ul li div{padding: 0 15px;} - margin써도 됨
+나눔고딕
+블록태그여서 리스트에 갖혀서 못나감-앱솔루트
+앱솔루트는 전에쓴포지션 ( 여기서는 fixed)따라감
+
+ const 상수변수 한번정하면 바꾸지x
+ value = 서버에 보냄
+ flex 돋보기 오른쪽으로 보내려고
+ div > a flex = 부모요소에 플랙스주고 이미지 마진 auto=위아래좌우 가운데
+ margin: auto 0 auto auto 위아래 가운데 오른쪽 끝으로 왼쪽은 여백x
+ 

@@ -1,0 +1,23 @@
+
+*{vertical-align: middle;padding: 0;
+    margin: 0; box-sizing: border-box;border: 0;}
+    /* border padding 모두포함 border-box */
+    /* 이미지포함모든요소 수직정렬  */
+ html,body{width: 100%; height: 100%;} 
+
+/* 자식요소에서 너비나 높이 100%쓰이는 경우가 있을수 있는데 그것때문에 무조건 써줘야한다 */
+html{overflow-y: scroll;}
+/* 스크롤바 무조건 존재해야함 (스크롤바 크기)17px 빼고 나머지1903px에 맞춰서 반응형,폰트등등 제작해야함 */
+body{font: normal 14px/1 'Nanum Gothic','arial', 'sans-serif'; color: #333; background: #fff;}
+/* normal=400(글자굵기) 14px의 크기만큼 높이 나온다(글자 위아래 여백 없애려고) 1 : lineheight */
+/* 리셋에서 필수로 써야하는것들 */
+ul, li{list-style: none;}
+header, main, footer, section, article,nav, aside {display: block;} 
+a {color: #333; text-decoration: none;}
+h1, h2,h3,h4,h5,h6{font-size: 14px; font-style: normal;}
+em, i, address{font-style: normal;}
+strong,b{font-style: normal;}
+.clearfix::after{content:'';display: block; clear: both;}
+.hide{display: none;}
+/* 투명버튼 만들때 사용 */
+.blind{display: block;text-indent: -2000px;overflow: hidden;}

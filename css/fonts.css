@@ -1,0 +1,40 @@
+
+
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/nanumgothic/v17/PN_oRfi-oW3hYwmKDpxS7F_LXv77yzkx1Yl3P690375P--a0I5vFgZwP.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/nanummyeongjo/v15/9Bty3DZF0dXLMZlywRbVRNhxy2pLVFAxzeau69lCAWDrAgLCcAPYKgRK4K8.13.woff2) format('woff2');
+    unicode-range: U+cfa2-cfc3, U+cfc5-cfdf, U+cfe2-cfe3, U+cfe5-cfe7, U+cfe9-cff4, U+cff6-cffb, U+cffd-cfff, U+d001-d003, U+d005-d017, U+d019-d033, U+d036-d037, U+d039-d03b, U+d03d-d04a;
+}
+
+@font-face {
+    font-family: 'Nanum Pen Script';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/nanumpenscript/v15/daaDSSYiLGqEal3MvdA_FOL_3FkN2zuWfsNNAlvx8XyriiBoA4Qt-85VRg.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v13/Pby6FmXiEBPT4ITbgNA5CgmOsn7tqoAetwxcvEcQNuukkRBBEIyMcFQ.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
