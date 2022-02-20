@@ -1,18 +1,20 @@
-(($)=>{
+(($,window)=>{
 
     const starBucks = {
         init(){
             this.header();
-            this. section1();
-            this. section2();
-            this. section3();
-            this. section4();
-            this. section5();
-            this. section6();
-            this. section7();
-            this. section8();
-            this. section9();
-            this. footer();
+            this.section1();
+            this.section2();
+            this.section3();
+            this.section4();
+            this.section5();
+            this.section6();
+            this.section7();
+            this.section8();
+            this.section9();
+            this.footer();
+            this.goTop();
+            this.quickMenu();
         },
         header(){
             //마우스를 메인메뉴에 올리면 서브메뉴 부드럽게 펼쳐지고 메뉴에는 색상이 변경된다
@@ -76,6 +78,28 @@
                    }
                }
            }); 
+
+           //mobile btn event
+           $('.berger-btn').on({
+               click: function(){
+                   $('#mobileNav').addClass('addMobile')
+                   $('.mobile-container').stop().animate({left:0}, 400)
+               }
+           });
+           $('.mobile-close').on({
+               click: function(){
+                $('.mobile-container').stop().animate({left:110+'%'}, 400, function(){
+                   $('#mobileNav').removeClass('addMobile') 
+                });
+               }
+           });
+           $('.mobile-container li a').on({
+               click:function(){
+                   $(this).toggleClass('addMobile');
+                   $(this).next('div').slideToggle(300);
+                   $('.mobile-container li a.none-sub').removeClass('addMobile')
+               }
+           });
         },
         section1(){
           //애니메이션
@@ -276,25 +300,133 @@
          
         },
         section5(){
+            var sec1Top = $('#section1').offset().top+200;
+
+            $(window).scroll(function(){
+                if($(window).scrollTop()==0){
+                    $('#section5').removeClass('addAni');
+                }
+                if($(window).scrollTop() >= sec1Top){
+                    $('#section5').addClass('addAni');
+                }
+            })
             
         },
         section6(){
-           
+           var sec4Top = $('#section4').offset().top-200;
+
+           $(window).scroll(function(){
+               if($(window).scrollTop()==0){
+                   $('#section6').removeClass('addFadein');
+               }
+               if($(window).scrollTop() >= sec4Top){
+                   $('#section6').addClass('addFadein');
+               }
+           });
+        
         },
+        
         section7(){
+            var sec5Top = $('#section5').offset().top;
+
+            $(window).scroll(function(){
+                if($(window).scrollTop()==0){
+                    $('#section7').removeClass('addAni');
+               }
+               if($(window).scrollTop() >= sec5Top){
+                $('#section7').addClass('addAni');
+               }
+                
+            });
             
         },
         section8(){
+          var sec7Top = $('#section7').offset().top-200;
+          $(window).scroll(function(){
+            if($(window).scrollTop()==0){
+                $('#section8').removeClass('addFade')
+            }
+            if($(window).scrollTop()>=sec7Top){
+                $('#section8').addClass('addFade')
+            }
+          });
             
         },
         section9(){
+            var sec7Top = $('#section7').offset().top+200;
+            $(window).scroll(function(){
+                if($(window).scrollTop()==0){
+                    $('#section9').removeClass('addAni')
+                }
+                if($(window).scrollTop() >= sec7Top){
+                    $('#section9').addClass('addAni')
+                }
+            });
+            //반응형
+            var leftW=null;
+            var leftH=null;
+
+            function leftResize(){
+
+            // 자체너비는 문제가 있음
+            // 이유는 안에 들어있는 이미지 작은이미지가 우측 으로 빠진것 때문에 크기 문제
+            // 그래서 
+            // 창너비가 960이하이면 
+            // left박스의 너비 = 창너비*(이미지너비 비율) 0.38125
+            // left박스의 높이 = left박스의 너비*높이 비율 0.85246
+
+            winW = $(window).innerWidth();          
+            if( winW <= 960 ){    // 창너비가 
+                leftW = winW * 0.38125;                 
+                leftH = leftW * 0.85246; //높이 = 너비*비율(85.246%)
+            }
+            else{
+                leftW = 366;
+                leftH = 312;
+            }
+            $('#section9 .left').css({ width:leftW, height:leftH });
+
+            }
+            leftResize();
+
+            $(window).resize(function(){
+            leftResize();
+            });            
             
         },
         footer(){
            
+        },
+        goTop(){
+            $('.go-top').stop().fadeOut(1000);
+            $(window).scroll(function(){
+                if($(window).scrollTop() >= 100){
+                    $('.go-top').stop().fadeIn(1000);
+                }
+                else{
+                    $('.go-top').stop().fadeOut(1000);
+                }
+            });
+        },
+        
+        quickMenu(){
+            var quicTop1 = ($(window).height()-96)/2;
+           
+            function quickMenuFn(){
+                $('.quick-menu').stop().animate({top:$(window).scrollTop() + 150}, 0);
+            }
+            quickMenuFn();
+            $(window).scroll(function(){
+                quickMenuFn();
+            });
+            $('.go-top-btn').on({
+                click:function(){
+                    $('html, body').stop().animate({scrollTop:0},600);
+                }
+            });
         }
 
     }
 
     starBucks.init();
-})(jQuery);
+})(jQuery, window);
